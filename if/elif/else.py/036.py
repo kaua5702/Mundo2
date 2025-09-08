@@ -19,13 +19,15 @@ while True:
     time.sleep(1)
     salario = float(input('Digite seu salário: '))
     time.sleep(1)
-    parcela = float(input('Em quantos anos deseja pagar?  '))
+    anos = float(input('Em quantos anos deseja pagar?  '))
     time.sleep(1)
     valor_p = salario * 0.30
-    prestacao = valor / parcela
+    prestacao = valor / (anos * 12)
     if prestacao > valor_p:
         print('Calculando...')
         time.sleep(3)
+        print(f'O valor das parcelas ficaria {prestacao} reais')
+        time.sleep(1)
         print('Emprestimo negado!\n')
         time.sleep(1)
         resposta = input('Deseja tentar novamente? (s/n) ')
@@ -37,6 +39,8 @@ while True:
             time.sleep(2)
             break
     else:
+        print(f'O valor das parcelas ficaria {prestacao}')
+        time.sleep(1)
         print('Emprestimo aprovado!!')
         time.sleep(1)
         print('Encerrando...')
